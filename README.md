@@ -1,6 +1,6 @@
-# clairedillon
+# somename
 
-> clairedillon.ie
+> somename.ie
 
 ## Build Setup
 

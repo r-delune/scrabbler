@@ -1,8 +1,8 @@
 {
-  "name": "clairedillon",
+  "name": "somename",
   "version": "1.0.0",
-  "description": "clairedillon.ie",
-  "author": "Brian Dillon, Claire Dillon",
+  "description": "somename.ie",
+  "author": "bdelune",
   "private": true,
   "scripts": {
     "dev": "nuxt",
