@@ -1,0 +1,14 @@
+{
+    "intro" : {
+        "text" : "Website with stuff"
+    },
+    "subtitle" : {
+        "text" : "can make a list or some shit here"
+    },
+    "link_1" : {
+        "text" : "some cool shit here"
+    },
+    "link_2" : {
+        "text" : "and here"
+    }
+}

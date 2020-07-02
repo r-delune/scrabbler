@@ -1,0 +1,32 @@
+{
+  "name": "clairedillon",
+  "version": "1.0.0",
+  "description": "clairedillon.ie",
+  "author": "Brian Dillon, Claire Dillon",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest",
+    "deploy": "gh-pages -d dist",
+    "mupdate": "git add . && git commit -m 'update' && git push origin master && gh-pages -d dist",
+    "master": "git push origin master && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "netlify-cms": "^2.10.32",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "gh-pages": "^2.2.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}
