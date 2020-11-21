@@ -1,36 +1,53 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
+  <v-container align-center fluid fill-height>
+    <v-row align-center justify="center">
+      <v-col lg="6">
+
+      <!-- <logo /> -->
       <h1 class="title">
-        {{ content.intro.text }}
+        Seans scrabbler
       </h1>
       <h2 class="subtitle">
-        {{ content.subtitle.text }}
+        Scrabbledeedoo
       </h2>
-      <div class="links">
-        <a
-          href="https://threejs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          {{ content.link_1.text }}
-        </a>
-        <a
-          href="https://greensock.com/"
-          target="_blank"
-          class="button--grey"
-        >
-          {{ content.link_2.text }}
-        </a>
-      </div>
-    </div>
-  </div>
+      <h5 v-if="content" >There are {{ content.words.length }} words to go through</h5>
+ 
+   <v-col lg="6" md="12">
+                      <!-- email -->
+                <v-text-field
+                  v-model="word_display"
+                  label="Question"
+                  data-vv-name="Email"
+                  prepend-icon="mdi-email"
+                  name="task"
+                   class="mx-5"
+                  disabled
+                >
+                </v-text-field>
+
+                 <v-text-field
+                  v-model="guess"
+                   prepend-icon="mdi-email"
+                  label="Enter your guess here"
+                  name="guess"
+                  class="mx-5"
+                  required
+                >
+                </v-text-field>
+
+                 <v-btn large @click="guess_answer()"> Submit guess </v-btn>
+
+                 <v-btn large  @click="scrabble()"> Generate New </v-btn>
+  </v-col>
+       </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import { mapState } from 'vuex';
+
+import content from '../assets/content/scrabble_words.json'
 export default {
   head() {
     return {
@@ -40,12 +57,45 @@ export default {
   components: {
     Logo
   },
+    data() {
+    return {
+      guess: '',
+      word_display: '',
+      answer: '',
+    }},
   computed: {
     content () {
       return this.$store.state.home.data
+    },
   },
-  ...mapState('auth', ['loggedIn', 'user'])
-  },
+  
+  methods:{
+     scrabble () {
+       console.log('scrabbling..',this.content.words)
+
+          console.log('length is..', this.content.words.length)
+          // choose random element
+          this.answer  = this.content.words[Math.floor(Math.random() * this.content.words.length)];
+
+
+          this.word_display =  this.answer.split('').sort().join('');
+
+ console.log('jumbled is is..', this.word_display)
+
+  console.log('answer is is..', this.answer)
+     },
+          guess_answer () {
+       console.log('guessing..', this.guess)
+        console.log('answer..', this.answer)
+
+        if (this.guess === this.answer) {
+          console.log('this answer is correcnt..')
+          this.word_display = 'Correct!!! The answer is ' + this.answer + ''
+        }else{
+           this.word_display = 'Wrong!!! The answer is ' + this.answer+ ''
+        }
+     }
+  }
 };
 </script>
 
@@ -57,6 +107,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: green;
 }
 
 .title {

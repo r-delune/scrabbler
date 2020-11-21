@@ -1,14 +1,14 @@
 {
     "intro" : {
-        "text" : "Title here"
+        "text" : "Sean's Scrabbler"
     },
     "subtitle" : {
-        "text" : "can make a list or some shit here"
+        "text" : "Scrabbedeedoo"
     },
     "link_1" : {
-        "text" : "a link to something"
+        "text" : "Begin Scrabbling"
     },
     "link_2" : {
-        "text" : "and here"
+        "text" : ""
     }
 }

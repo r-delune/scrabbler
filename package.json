@@ -1,5 +1,5 @@
 {
-  "name": "somename",
+  "name": "Scrabbler",
   "version": "1.0.0",
   "description": "somename.ie",
   "author": "bdelune",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/vuetify": "^1.11.2",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
     "netlify-cms": "^2.10.32",
