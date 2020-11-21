@@ -1,24 +1,27 @@
 <template>
   <v-container align-center fluid fill-height>
     <v-row align-center justify="center">
-      <v-col lg="6">
+      <v-col lg="auto">
+    <v-row align-center justify="center">
+<span class="icon mdi mdi-skateboard"></span>
 
+       </v-row >  
       <!-- <logo /> -->
-      <h1 class="title">
-        Seans scrabbler
-      </h1>
-      <h2 class="subtitle">
-        Scrabbledeedoo
+      <h2 >
+        Seans Scrabbler
       </h2>
-      <h5 v-if="content" >There are {{ content.words.length }} words to go through</h5>
  
-   <v-col lg="6" md="12">
+      <h5 v-if="content" >There are {{ content.words.length }} words to go through</h5>
+ </v-col>
+    </v-row >  
+
+    
+    <v-row align-center justify="center">
                       <!-- email -->
                 <v-text-field
                   v-model="word_display"
-                  label="Question"
-                  data-vv-name="Email"
-                  prepend-icon="mdi-email"
+                  label=""
+              
                   name="task"
                    class="mx-5"
                   disabled
@@ -27,20 +30,27 @@
 
                  <v-text-field
                   v-model="guess"
-                   prepend-icon="mdi-email"
-                  label="Enter your guess here"
+               
+                  label="Enter Guess"
                   name="guess"
                   class="mx-5"
                   required
                 >
                 </v-text-field>
 
-                 <v-btn large @click="guess_answer()"> Submit guess </v-btn>
 
-                 <v-btn large  @click="scrabble()"> Generate New </v-btn>
-  </v-col>
-       </v-col>
-    </v-row>
+              </v-row >  
+
+          <v-row align-center justify="center">
+              <v-col cols='6'>
+                 <v-btn large  @click="scrabble()"> New Word </v-btn>
+              </v-col>  
+              <v-col cols='6'>
+                 <v-btn large @click="guess_answer()"> Check! </v-btn>
+              </v-col>
+            
+              </v-row >     
+
   </v-container>
 </template>
 
@@ -68,7 +78,9 @@ export default {
       return this.$store.state.home.data
     },
   },
-  
+  mounted() {
+    this.scrabble()
+  },
   methods:{
      scrabble () {
        console.log('scrabbling..',this.content.words)
@@ -131,4 +143,12 @@ export default {
 .links {
   padding-top: 15px;
 }
+
+.icon{
+ 
+    width: 100%;
+        font-size: 137px;
+    color: var(--primary-text-color);
+}
+
 </style>

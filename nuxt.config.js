@@ -47,6 +47,7 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    'nuxtjs-mdi-font'
   ],
   /*
   ** Axios module configuration
