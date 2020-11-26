@@ -49,20 +49,39 @@ export default {
     '@nuxtjs/dotenv',
     'nuxtjs-mdi-font'
   ],
+    /*
+  ** Build configuration
+  */
+ build: {
+  extend (config, { isClient }) {
+    if (isClient) {
+      config.module.rules.push(
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
+        },
+        {
+          enforce: 'pre',
+          test: /\.vue$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
+      })
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
   },
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
-  }
+
+ }
 }
